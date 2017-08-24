@@ -2,15 +2,14 @@
 
 class Connection
 {
-    public static function make()
+    public static function make($config)
     {
-        $servername = getenv('IP');
-        $username = 'root';
-        $password = "";
-        $database = "mytodo";
-        $dbport = 3306;
         try {
-            return new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+            return new PDO($config['connection'] . ';dbname=' . $config['name'],
+                $config['username'],
+                $config['password'],
+                $config['options']
+            );
         } catch (PDOException $e) {
             die($e->getMessage());
         }
