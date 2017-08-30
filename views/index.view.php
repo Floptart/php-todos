@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>This is a test page</title>
-</head>
-<body>
+<?php require('partials/head.php'); ?>
+    
+    <h1>My Tasks</h1>
     <ul>
         <?php foreach ($tasks as $task) : ?>
             <li>
@@ -16,5 +12,5 @@
             </li>
         <?php endforeach; ?>
     </ul>
-</body>
-</html>
+
+<?php require('partials/footer.php'); ?>
